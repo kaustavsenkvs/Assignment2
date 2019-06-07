@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SoC Student List</title>
+	<style>
+	th{
+		background-color: #ff6600;
+		font-size: 50px;
+	}
+	td{
+		background-color: 	 #33ffff;
+		font-size: 40px;
+	}
+	tr:hover{
+		color: #33ff33;
+		background-color:  #ffbf80;
+		cursor: pointer;
+	}
+    input{
+    	font-size: 40px;
+    	background-color: #ffff00;
+    	width: 100%;
+    }
+	</style>
+</head>
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('#inpu').on('keyup',function(){
+			var value = $(this).val().toLowerCase();
+        $('#tbod tr').filter(function(){
+        	$(this).toggle($(this).text().toLowerCase().indexOf(value)>-1)
+        });
+		});
+	});
+</script>
+<body bgcolor="#ffe6ff">
+<center>
+	<h1>List Of Students</h1><br>
+	<input type="text" id="inpu" placeholder="Enter Name, Roll_no ,Year"><br><br>
+	<table border="1" cellspacing='2px' cellpadding="20px" >
+	<tr>
+		<th>RollNo</th>
+		<th>Name</th>
+		<th>Year</th>
+	</tr>
+	<tbody id="tbod">
+	<tr>
+		<td>180351</td>
+		<td>Kaustav</td>
+        <td>Y18</td>
+		</tr>
+	<tr>
+		<td>180350</td>
+		<td>Keshav</td>
+        <td>Y18</td>
+		</tr>
+	<tr>
+		<td>180332</td>
+		<td>Yash</td>
+        <td>Y17</td>
+	</tr>
+	<tr>
+		<td>180411</td>
+		<td>Dhruvil</td>
+        <td>Y18</td>
+	</tr>
+	</tbody>
+	</table>
+</center>
+
+</body>
+</html>

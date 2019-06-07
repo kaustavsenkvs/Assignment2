@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment</title>
+<style>
+	table{
+		display: none;
+	}
+	th{
+		background-color: #ff6600;
+		font-size: 50px;
+	}
+	td{
+		background-color: 	 #33ffff;
+		font-size: 40px;
+	}
+	tr:hover{
+		color: #33ff33;
+		background-color:  #ffbf80;
+		cursor: pointer;
+	}
+    input{
+    	font-size: 40px;
+    	background-color: #ffff00;
+    	width: 100%;
+    }
+    .btn:hover{
+    	color: #33ff33;
+        background-color: #248f24;
+        cursor: pointer;
+        box-shadow: 10px 10px 10px 10px rgba(100,0,0,0.6);   
+	}
+	button{
+		font-size: 35px;
+		background-color:  tomato;
+		decoration
+	}
+	
+	#bt3{
+		float: right;
+	}
+	.di{
+		background-color: tomato;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('#bt2').click(function(){
+       $('table').fadeIn(1000);
+});
+});
+</script>
+</head>
+<body bgcolor="#ffe6ff">
+
+	<h1 align="center">List Of Students</h1><br>
+	<input type="text" id="in" placeholder="Name Of Students"><br><br>
+   <div class="di">
+    <button class="btn" id="bt1" onclick="fun()">Go</button>
+	<button class="btn" id="bt2">All Students</button>
+	<button class="btn" id="bt3" onclick="clr()">Clear</button>
+</div>
+	<br><br><br><br><br>
+<center>
+	<table border="1" cellspacing='2px' cellpadding="20px" >
+	<tr>
+		<th>RollNo</th>
+		<th>Name</th>
+		<th>Year</th>
+	</tr>
+	<tr>
+		<td>180351</td>
+		<td id='n1'>Kaustav</td>
+        <td>Y18</td>
+		</tr>
+	<tr>
+		<td>180350</td>
+		<td id='n2'>Kausta</td>
+        <td>Y18</td>
+		</tr>
+	<tr>
+		<td>180332</td>
+		<td id='n3'>Kaust</td>
+        <td>Y17</td>
+	</tr>
+	<tr>
+		<td>180411</td>
+		<td id='n4'>Kausv</td>
+        <td>Y18</td>
+	</tr>
+	</table>
+
+	<h1><d1v  class="a1" id='a1'></d1v><br></h1>
+	<h1><d1v  class="a1" id='a2'></d1v><br></h1>
+	<h1><d1v  class="a1" id='a3'></d1v><br></h1>
+	<h1><d1v  class="a1" id='a4'></d1v><br></h1>
+
+</center>
+</body>
+<script>
+	function clr(){
+		document.getElementById('in').value="";
+		document.getElementById('a1').innerHTML="";
+		document.getElementById('a2').innerHTML="";
+		document.getElementById('a3').innerHTML="";
+		document.getElementById('a4').innerHTML="";
+	}
+	function fun(){
+       var v1 = document.getElementById('in').value.toLowerCase();
+      
+      if(v1=="")
+      	return;
+
+       var name1=document.getElementById('n1').innerHTML;  
+       var name2=document.getElementById('n2').innerHTML;  
+       var name3=document.getElementById('n3').innerHTML;  
+       var name4=document.getElementById('n4').innerHTML;  
+       
+         	if(name1.toLowerCase().includes(v1)==true){
+                document.getElementById('a1').innerHTML='180351 '+name1+' Y18';             
+       		}
+            if(name2.toLowerCase().includes(v1)==true){
+                document.getElementById('a2').innerHTML='180350 '+name2+' Y18';
+            }
+            if(name3.toLowerCase().includes(v1)==true){
+                document.getElementById('a3').innerHTML='180332 '+name3+' Y17' ;
+            }
+            if(name4.toLowerCase().includes(v1)==true){
+                document.getElementById('a4').innerHTML='180411 ' +name4+' Y18' ;
+            }
+
+    }   
+	
+</script>
+</html>
